@@ -16,7 +16,7 @@ jobs:
     - uses: actions/checkout@v1
     - name: Clone
       run: |
-        git clone --depth=1 --branch chromium/${{ env.ANGLE_VERSION }} https://chromium.googlesource.com/angle/angle
+        git clone --depth=1 --branch chromium/${{ env.ANGLE_VERSION }} https://github.com/google/angle.git
     - name: Set up Python 2.7
       uses: actions/setup-python@v1
       with:
@@ -39,7 +39,9 @@ jobs:
         echo $PATH
         cd angle
         python scripts/bootstrap.py
+        echo "python scripts/bootstrap.py complete..."
         gclient sync
+        echo "gclient sync complete..."
         git checkout master
         gn gen out/Release
     - name: Build
