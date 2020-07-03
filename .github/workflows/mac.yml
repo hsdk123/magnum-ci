@@ -26,7 +26,7 @@ jobs:
     - name: Dependencies
       run: |
         git clone https://chromium.googlesource.com/chromium/tools/depot_tools.git
-        export PATH=${{ github.workspace }}/depot_tools:$PATH
+        export PATH="${{ github.workspace }}/depot_tools:$PATH"
         echo $PATH
     - name: Configure
       run: |
