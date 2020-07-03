@@ -25,7 +25,7 @@ jobs:
         python-version: 2.7
     - name: Dependencies
       run: |
-        Invoke-WebRequest https://storage.googleapis.com/chrome-infra/depot_tools.zip -O depot_tools.zip
+        git clone https://chromium.googlesource.com/chromium/tools/depot_tools.git
         7z x depot_tools.zip -o${{ github.workspace }}/depot_tools
         echo "::add-path::${{ github.workspace }}\depot_tools"
     - name: Configure
