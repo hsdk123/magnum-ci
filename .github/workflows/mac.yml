@@ -46,6 +46,8 @@ jobs:
         gn gen out/Release
     - name: Build
       run: |
+        export PATH="${{ github.workspace }}/depot_tools:$PATH"
+        echo $PATH
         cd angle
         autoninja -C out/Release libEGL libGLESv2
     - name: Install
