@@ -26,7 +26,6 @@ jobs:
     - name: Dependencies
       run: |
         git clone https://chromium.googlesource.com/chromium/tools/depot_tools.git
-        7z x depot_tools.zip -o${{ github.workspace }}/depot_tools
         echo "::add-path::${{ github.workspace }}\depot_tools"
     - name: Configure
       run: |
