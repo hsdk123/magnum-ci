@@ -30,9 +30,9 @@ jobs:
         echo $PATH
     - name: Configure
       run: |
-        mkdir angle\out
-        mkdir angle\out\Release
-        cp args-${{ matrix.target }}.gn angle\out\Release\args.gn
+        mkdir angle/out
+        mkdir angle/out/Release
+        cp args-${{ matrix.target }}.gn angle/out/Release/args.gn
     - name: Generate
       run: |
         export PATH="${{ github.workspace }}/depot_tools:$PATH"
@@ -49,8 +49,8 @@ jobs:
     - name: Install
       run: |
         mkdir install
-        mkdir install\bin
-        mkdir install\include
+        mkdir install/bin
+        mkdir install/include
 
         cp angle/out/Release/libEGL.dylib install/bin/
         cp angle/out/Release/libGLESv2.dylib install/bin
