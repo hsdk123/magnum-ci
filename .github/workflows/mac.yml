@@ -49,16 +49,13 @@ jobs:
     - name: Install
       run: |
         mkdir install
-        mkdir install\lib
         mkdir install\bin
         mkdir install\include
 
-        copy angle\out\Release\d3dcompiler_47.dll install\bin\
-        copy angle\out\Release\libGLESv2.dll.lib install\lib\libGLESv2.lib
-        copy angle\out\Release\libGLESv2.dll install\bin\
-        copy angle\out\Release\libEGL.dll.lib install\lib\libEGL.lib
-        copy angle\out\Release\libEGL.dll install\bin\
-        xcopy /e angle\include\* install\include\
+        cp angle/out/Release/libEGL.dylib install/bin/
+        cp angle/out/Release/libGLESv2.dylib install/bin
+        
+        cp -R angle/include/* install/include/
     - name: Upload artifacts
       uses: actions/upload-artifact@v1
       with:
