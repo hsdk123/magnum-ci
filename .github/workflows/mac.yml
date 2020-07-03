@@ -31,7 +31,7 @@ jobs:
       run: |
         mkdir angle\out
         mkdir angle\out\Release
-        copy args-${{ matrix.target }}.gn angle\out\Release\args.gn
+        cp args-${{ matrix.target }}.gn angle\out\Release\args.gn
     - name: Generate
       run: |
         cd angle
