@@ -35,6 +35,7 @@ jobs:
         cp args-${{ matrix.target }}.gn angle\out\Release\args.gn
     - name: Generate
       run: |
+        export PATH="${{ github.workspace }}/depot_tools:$PATH"
         echo $PATH
         cd angle
         python scripts/bootstrap.py
