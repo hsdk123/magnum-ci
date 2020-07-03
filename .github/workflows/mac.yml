@@ -36,7 +36,7 @@ jobs:
       run: |
         cd angle
         python scripts/bootstrap.py
-        gclient.bat sync
+        gclient sync
         git checkout master
         gn gen out/Release
     - name: Build
